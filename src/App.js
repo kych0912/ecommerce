@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from  "react-router-dom";
@@ -58,7 +58,7 @@ function App() {
     <RecoilRoot>
       <WebMain>
         <APP>
-          <BrowserRouter>
+          <HashRouter>
             <Routes>
               <Route element={<WithNav/>}>
                 <Route path ="/" element={<Main/>}/>
@@ -99,7 +99,7 @@ function App() {
               </Route>
 
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </APP>
       </WebMain>
     </RecoilRoot>
