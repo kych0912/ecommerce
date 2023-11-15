@@ -2,41 +2,14 @@ import {Box,Typography,IconButton,Card} from '@mui/material';
 import React, { useState } from "react";
 import { useRef,useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import {runningShoesBookMark} from "../../../../API/api/RunningShoes/shoes_api"
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 
 export default function Shoes_Detail_Title(props){
-    const { id } = useParams();
-    const session = localStorage.getItem('sessionid');
-
-    const [bookmark,setBookmark] = useState(false);
 
     function formatNumberWithCommas(number) {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
-
-    const bookMark = async (id) =>{
-        const response = await runningShoesBookMark(id,session);
-        if(response.response){
-            props.setError(response.response.status)
-            props.setOpen(true);
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-
-    const onClickBookMart = (id) =>{
-        if(bookMark(id)){
-            setBookmark(prev=>prev=!bookmark);
-        }
-    }
-
-    useEffect(()=>{
-        setBookmark(prev=>prev=props.shoes.bookmarked);
-    },[])
 
 
     return(
@@ -51,16 +24,9 @@ export default function Shoes_Detail_Title(props){
                         {props.shoes.name}
                     </Typography>
                 </Box>
-                {
-                    bookmark?
-                    <IconButton color="primary" onClick={()=>onClickBookMart(props.shoes.id)} sx={{}}>
-                        <BookmarkIcon sx={{fontSize:35}}/>
-                    </IconButton>
-                    :
-                    <IconButton onClick={()=>onClickBookMart(props.shoes.id)} sx={{}}>
-                        <BookmarkBorderIcon sx={{fontSize:35}}/>
-                    </IconButton>
-                }
+                <IconButton color="primary" sx={{}}>
+                    <BookmarkIcon sx={{fontSize:35}}/>
+                </IconButton>
             </Box>
 
             <Box sx={{display:'flex',justifyContent:'start',alignItems:'start',flexDirection:'column',width:'90%',pb:2}}>
@@ -69,13 +35,8 @@ export default function Shoes_Detail_Title(props){
                         출시색상
                     </Typography>
                     <Box sx={{display:'flex'}}>
-                        {
-                            props.shoes.launchColor.map((item,index)=>{
-                                return(
-                                    <Box key ={index} backgroundColor={item.content} sx={{borderRadius:'50%',width:'15px',height:'15px',mr:1,border:1}}/>
-                                )
-                            })
-                        }
+                        <Box backgroundColor={"black"} sx={{borderRadius:'50%',width:'15px',height:'15px',mr:1,border:1}}/>
+                        <Box backgroundColor={"white"} sx={{borderRadius:'50%',width:'15px',height:'15px',mr:1,border:1}}/>
                     </Box>
                 </Box>
 

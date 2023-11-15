@@ -45,7 +45,7 @@ export default function Main_TopBar(){
             width:'100%',
             borderBottom:1,
             minWidth:'360px',
-            maxWidth:'420px',
+            maxWidth:'450px',
             zIndex:1000,
             backgroundColor:'transparent',
             borderBottom:0,

@@ -15,7 +15,7 @@ import {
     ShoesSearch_Error,
 } from '../../../../state/Shoes/ShoesSearch_State';
 import {ShoesMain_ShoesBookMark} from "../../../../state/Shoes/ShoesMain_State"
-import { fetchSearchShoes,runningShoesBookMark } from '../../../../API/api/RunningShoes/shoes_api';
+import { fetchSearchShoes,runningShoesBookMark } from '../../../../API/api/RunningShoes/clothes_api';
 
 
 export default function Shoes_Search_List(props){

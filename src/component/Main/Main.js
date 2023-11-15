@@ -5,13 +5,11 @@ import { Link } from 'react-router-dom';
 import "../../style/fonts/pretendardvariable.css"
 import { useNavigate } from "react-router-dom";
 import Banner from "./Banner/Banner"
-import Competition from "./Main_Competition/Competition"
-import Shoes from "./Main_Shoes/Shoes"
-import Community from "./Main_Community/Community"
-import Crew from './Main_Crew/Crew'
+import Clothes from "./Main_Clothes/Clothes"
 import Auth from "../../hoc/auth"
 import {Modal,Divider} from '@mui/material';
 import TopBar from "./TopBar/TopBar"
+import All from "./Main_All/All"
 
 const style = {
     position: 'absolute',
@@ -54,10 +52,10 @@ function Main(){
     }
 
     useEffect(() =>{
-        setLoading1(true);
+        setLoading1(false);
         setLoading2(true);
-        setLoading3(true);
-        setLoading4(true);
+        setLoading3(false);
+        setLoading4(false);
         setLoadingall(true);
         window.scrollTo({top:0})
     },[])
@@ -75,14 +73,12 @@ function Main(){
             </Box>
             <Box sx={{width:'100%',mb:8,display:'flex',flexDirection:'column',alignItems:"center",jusstifyContent:"center"}}>
                 <Divider sx={{width:'90%',border:2,borderColor:"#F6F6F6"}}/>
-                <Competition setLoading1={setLoading1} loadingall={loadingall} setError={setError} setOpen={setOpen}/>
-                <Divider sx={{width:'90%',border:2,borderColor:"#F6F6F6"}}/>
-                <Shoes setLoading2={setLoading2} loadingall={loadingall} setError={setError} setOpen={setOpen}/>
-                <Divider sx={{width:'90%',border:2,borderColor:"#F6F6F6"}}/>
-                <Community setLoading4={setLoading4} loadingall={loadingall} setError={setError} setOpen={setOpen}/>
-                <Divider sx={{width:'90%',border:2,borderColor:"#F6F6F6"}}/>
-                <Crew setLoading3={setLoading3} loadingall={loadingall} setError={setError} setOpen={setOpen}/>
+                <Clothes setLoading2={setLoading2} loadingall={loadingall} setError={setError} setOpen={setOpen}/>
 
+                <Divider sx={{width:'90%',border:2,borderColor:"#F6F6F6"}}/>
+                <All setLoading3={setLoading3} loadingall={loadingall} setError={setError} setOpen={setOpen}/>
+
+                
             </Box>
 
             <Box>

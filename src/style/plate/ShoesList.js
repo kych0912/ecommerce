@@ -2,7 +2,8 @@ export const shoesList = {
     "shoesDetailBox":{
         display:'flex',
         flexDirection:'column',
-        mt:'5px'
+        mt:'5px',
+        width:"100%"
     },
     "shoesDetailBrand":{ 
         fontFamily:'Pretendard Variable',

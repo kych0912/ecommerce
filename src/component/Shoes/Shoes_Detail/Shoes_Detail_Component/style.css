@@ -30,3 +30,7 @@
     background-color: #f2f2f7;
     --swiper-scrollbar-sides-offset:100px
   }
+
+  .competition{
+    width:95% !important;
+  }

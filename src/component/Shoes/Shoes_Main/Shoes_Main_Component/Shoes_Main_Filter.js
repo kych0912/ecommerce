@@ -6,12 +6,8 @@ import { useNavigate } from "react-router-dom";
 import Drawer from './Shoes_Main_Drawer';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { API_URL } from '../../../../API/URL';
-import { fetchSearchShoes } from '../../../../API/api/RunningShoes/shoes_api';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
-import { useRecoilState } from 'recoil';
-import {ShoesMain_ShoesBookMark} from "../../../../state/Shoes/ShoesMain_State"
-import { runningShoesBookMark, fetchUserName } from '../../../../API/api/RunningShoes/shoes_api';
+import { fetchSearchShoes } from '../../../../API/api/RunningShoes/clothes_api';
+import { shoesList } from '../../../../style/plate/ShoesList';
 
 //모듈 필요
 import { FreeMode } from 'swiper/modules';
@@ -35,15 +31,13 @@ export default function Shoes_Search_Filter(props){
     const [query,setQuery] = useState("");
     const [loading,setLoading] = useState(true);
     const [list,setList] = useState([]);
-    const [shoesBookmark,setShoesBookmark] = useRecoilState(ShoesMain_ShoesBookMark);
-    const [userName,setUserName] = useState("");
 
     function formatNumberWithCommas(number) {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 
     const FetchList = async () => {
-        const response = await fetchSearchShoes("?"+query,session);
+        const response = await fetchSearchShoes(query);
     
         if(response.response){
             props.setError(response.response.status)
@@ -56,40 +50,8 @@ export default function Shoes_Search_Filter(props){
         setLoading(false);
     }
 
-    const bookMark = async (id) =>{
-        const response = await runningShoesBookMark(id,session);
-
-        if(response.response){
-            props.setError(response.response.status)
-            props.setOpen(true);
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-
-    const onClickBookMart = (id,event) =>{
-        event.stopPropagation();
-        if(bookMark(id)){
-            setShoesBookmark((prev)=>({...prev,[id]:!shoesBookmark[id]}))
-        }
-    }
-
-    const FetchUserName = async () => {
-        const _UserName = await fetchUserName(session);
-
-        if(_UserName.response){
-            props.setError(_UserName.response.status)
-            props.setOpen(true)
-        }
-        else{
-            setUserName(prev=>prev=_UserName)
-        }
-    }
-
     const navigateToShoesDetail =(id) =>{
-        navigate(`/shoes/detail/${id}`)
+        navigate(`/clothes/detail/${id}`)
     }
 
     const openDrawer = () => {
@@ -101,17 +63,6 @@ export default function Shoes_Search_Filter(props){
         FetchList();
     },[query])
 
-    useEffect(()=>{
-        FetchUserName();
-    },[])
-
-
-    useEffect(()=>{
-        for(const item of list){
-            setShoesBookmark((prev)=>({...prev,[item.id]:item.bookmarked}))
-        }
-    },[list])
-
     return(
         <Box sx={{backgroundColor:'#ffffff',display:'flex',justifyContent:'center',alignItems:'center',borderColor:'#E8E8E8',width:'100%',my:3}}>
             {
@@ -120,11 +71,8 @@ export default function Shoes_Search_Filter(props){
                     {/*상단제목*/}
                     <Box sx={{width:'100%'}}>
                         <Box sx={{width:'100%',display:'flex',alignItems:'start',justifyContent:'center',flexDirection:'column'}}>
-                            <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'800',fontSize:'24px',ml:2}}>
-                                {`${userName} `} 러너님을 위한 러닝화
-                            </Typography>
-                            <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'500',fontSize:'13px',color:'#9D9D9D',ml:2,mb:1,mt:0.5}}>
-                                러너님을 위한 러닝화에요
+                            <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'800',fontSize:'24px'}}>
+                                 회원님이 찾으시는 의류
                             </Typography>
                         </Box>
                     </Box>
@@ -132,7 +80,7 @@ export default function Shoes_Search_Filter(props){
                     {
                         loading?
                         <Swiper
-                            spaceBetween={-6}
+                            spaceBetween={8}
                             modules={[FreeMode]}
                             slidesPerView={'auto'}
                             freeMode={{enabled: true}}	// 추가
@@ -155,7 +103,7 @@ export default function Shoes_Search_Filter(props){
                                 list?
                                 <Box sx={{width:'100%',pt:1}}>
                                     <Swiper
-                                        spaceBetween={-10}
+                                        spaceBetween={8}
                                         modules={[FreeMode]}
                                         slidesPerView={'auto'}
                                         freeMode={{enabled: true}}	// 추가
@@ -164,30 +112,18 @@ export default function Shoes_Search_Filter(props){
                                             list.map((item,index)=>{
                                                 return(
                                                     <SwiperSlide key={item.id} className='shoes'>
-                                                        <Box onClick = {()=>navigateToShoesDetail(item.id)} sx={{width:'100%'}}>
-                                                        
-                                                        <Box sx={{position:'relative',backgroundColor:'#f4f4f4',borderRadius:'8px'}}>
-                                                                <img src={`${API_URL}${!item.shoesImg.length?null:item.shoesImg[0].url}`} style={{width:'170px',height:'170px',objectFit:'contain',objectPosition:'center'}}/>
-                                                                {
-                                                                    shoesBookmark[item.id]?
-                                                                    <IconButton onClick={(e)=>onClickBookMart(item.id,e)} sx={{position:"absolute",top:5,right:5,zIndex:999}}>
-                                                                        <BookmarkIcon/>
-                                                                    </IconButton>
-                                                                    :
-                                                                    <IconButton onClick={(e)=>onClickBookMart(item.id,e)} sx={{position:"absolute",top:5,right:5,zIndex:999}}>
-                                                                        <BookmarkBorderIcon/>
-                                                                    </IconButton>
-                                                                }
+                                                       <Box onClick={()=>navigateToShoesDetail(item.id)} sx={{width:'100%',height:'250px'}}>
+                                                            <Box sx={{position:'relative',backgroundColor:'#f4f4f4',borderRadius:'8px'}}>
+                                                                <img src={`${API_URL}/api/file/${item.mainImg}`} onerror="this.style.display='none'" style={{width:'170px',height:'170px',objectFit:'contain',objectPosition:'center',px:1}}/>
                                                             </Box>
-                                                            
-                                                            <Box sx={{display:'flex',flexDirection:'column',ml:1,mt:1}}>
-                                                                <Typography sx={{lineHeight:"20px",fontFamily:'Pretendard Variable',fontWeight:'700',fontSize:'16px',whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>
+                                                            <Box sx={shoesList.shoesDetailBox}>
+                                                                <Typography sx={shoesList.shoesDetailBrand}>
                                                                     {item.brand}
                                                                 </Typography>
-                                                                <Typography sx={{lineHeight:"20px",fontFamily:'Pretendard Variable',fontWeight:'300',fontSize:'16px',whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>
-                                                                    {item.koreanName}
+                                                                <Typography sx={shoesList.shoesDetailName}>
+                                                                    {item.name}
                                                                 </Typography>
-                                                                <Typography sx={{lineHeight:"20px",fontFamily:'Pretendard Variable',fontWeight:'600',fontSize:'16px'}}>
+                                                                <Typography sx={shoesList.shoesDetailPrice}>
                                                                     {formatNumberWithCommas(item.price)}
                                                                 </Typography>
                                                             </Box>

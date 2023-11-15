@@ -12,7 +12,7 @@ const TopbarTheme = {
     position:'fixed',
     top:0,
     display:'flex',
-    justifyContent:'space-between',
+    justifyContent:'center',
     alignItems:'center',
     backgroundColor:'#ffffff',
     height:'60px',
@@ -20,7 +20,7 @@ const TopbarTheme = {
     borderBottom:1,
     borderBottomColor:'#E0E0E0',
     minWidth:'360px',
-    maxWidth:'420px',
+    maxWidth:'450px',
     zIndex:1000
 }
 
@@ -37,8 +37,8 @@ export default function Shoes_Detail_TopBar(){
 
     return(
         <Box sx={TopbarTheme}>
-            <Box onClick = {navigateToBack} sx={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                <IconButton type="button" sx={{ml:1}} aria-label="search">
+            <Box onClick = {navigateToBack} sx={{display:'flex',justifyContent:'start',alignItems:'center',width:"90%"}}>
+                <IconButton type="button" sx={{}} aria-label="search">
                     <WestIcon sx={{}}/>
                 </IconButton>
             </Box>

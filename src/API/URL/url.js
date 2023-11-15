@@ -1,4 +1,4 @@
-export const API_URL = "https://test.runninglife.co.kr";
+export const API_URL = "http://ec2-3-144-101-179.us-east-2.compute.amazonaws.com:8080";
 export const FIREBASE_CONFIG = {
     apiKey: "AIzaSyDDwkvW9hb49PP9_VHmeelNZATfAEkPBt0",
     authDomain: "running-f9e11.firebaseapp.com",

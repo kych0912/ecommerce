@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useRef,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-import { fetchPurposeShoes,fetchPurPoseTag,runningShoesBookMark } from '../../../../API/api/RunningShoes/shoes_api';
+import { fetchPurposeShoes,fetchPurPoseTag,runningShoesBookMark } from '../../../../API/api/Clothes/clothes_api';
 import Skeleton from '@mui/material/Skeleton';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';

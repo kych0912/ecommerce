@@ -5,17 +5,12 @@ module.exports = function(app) {
 app.use(
     '/api',
         createProxyMiddleware({
-            target: 'https://test.runninglife.co.kr',
+            target: 'http://ec2-3-144-101-179.us-east-2.compute.amazonaws.com:8080',
+            secure: false,
             changeOrigin: true,
         })
     );
     
-app.use(
-    'https://dj80obdkys5rw.cloudfront.net/api',
-        createProxyMiddleware({
-            target: 'https://test.runninglife.co.kr',
-            changeOrigin: true,
-        })
-    );
+
 };
 

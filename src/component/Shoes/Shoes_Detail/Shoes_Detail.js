@@ -6,22 +6,13 @@ import Banner from "./Shoes_Detail_Component/Shoes_Detail_Banner"
 import Title from "./Shoes_Detail_Component/Shoes_Detail_Title"
 import TopBar from "./Shoes_Detail_Component/Shoes_Detail_TopBar"
 import {Divider} from '@mui/material';
-import Recommend from "./Shoes_Detail_Component/Shoes_Detail_Recommend"
-import Feature from "./Shoes_Detail_Component/Shoes_Detail_Feature"
 import Navbar from './Shoes_Detail_Component/Shoes_Detail_Navbar';
-import { fetchShoesDetail } from '../../../API/api/RunningShoes/shoes_api';
+import { fetchShoesDetail } from '../../../API/api/RunningShoes/clothes_api';
 import Skeleton from '@mui/material/Skeleton';
 import { useParams } from "react-router-dom";
 import {Modal} from '@mui/material';
-import {
-    ShoesDetail_Comment,
-    ShoesDetail_Comment_Order
-} from "../../../state/Shoes/ShoesMain_State";
-import Comment from "./Shoes_Detail_Component/Shoes_Detail_Comment"
-import { FetchRunningshoesCommentPopular } from '../../../API/api/RunningShoes/Shoes_comment_api';
-import axios from 'axios';
-import { useRecoilState } from 'recoil';
-
+import Review from "./Shoes_Detail_Component/Shoes_Detail_Review"
+import Tabs from "./Shoes_Detail_Component/Shoes_Main_Tabs"
 
 const style = {
     position: 'absolute',
@@ -47,19 +38,16 @@ function Shoes_Detail(){
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const [shoes,setShoes] = useState({});
-    const [comment,setComment] = useRecoilState(ShoesDetail_Comment);
-    const [commentOrder,setCommentOrder] = useRecoilState(ShoesDetail_Comment_Order);
     
 
     const FetchShoes = async () => {
-        const [_ShoesDetail,_Comment] = await axios.all([fetchShoesDetail(id,session),FetchRunningshoesCommentPopular(id,session)]);
+        const _ShoesDetail = await fetchShoesDetail(id);
         
-        if(_ShoesDetail.response||_Comment.response){
-            setError(_ShoesDetail.response?_ShoesDetail.response.status:_Comment.response.status)
+        if(_ShoesDetail.response){
+            setError(_ShoesDetail.response)
             setOpen(true);
         }
         else{
-            setComment(prev=>prev=_Comment);
             setShoes(_ShoesDetail);
         }
 
@@ -88,18 +76,16 @@ function Shoes_Detail(){
                         :
                         <Box sx={{width:"100%",display:"flex",justifyContent:"center"}}>
                             {
-                                shoes&&comment?
+                                shoes?
                                 <Box sx={{width:"100%"}}>
                                     <Title setError = {setError} shoes = {shoes}/>
                                     <Divider/>
 
-                                    <Recommend shoes = {shoes}/>
-                                    <Divider/> 
+                                    <Review shoes={shoes}/>
 
-                                    <Feature shoes = {shoes}/>
-                                    <Divider/>
 
-                                    <Comment setError = {setError} setOpen={setOpen}/>
+                                    <Tabs shoes={shoes}/>
+
                                 </Box>
                                 :
                                 <Box sx={{width:'100%',height:"500px",display:'flex',justifyContent:"center",alignItems:"center"}}>

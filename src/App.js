@@ -10,14 +10,12 @@ import Login from "./component/User/Login/User_Login"
 import RegisterTel from "./component/User/Register/Register_Tel"
 import RegisterNickname from "./component/User/Register/Register_Nickname"
 import RegisterCrew from "./component/User/Register/Register_Crew"
-import Schedule from "./component/Competition/Competition_Schedule/Competition_Schedule"
+
 import Main from "./component/Main/Main";
 import styled from "styled-components"
 import Navbar from "./component/Navbar/Navbar"
-import Competition_Detail from './component/Competition/Competition_Detail/Competition_Detail'
-import ScheduleSearch from './component/Competition/Competition_Search/Competition_Search'
-import CompetitionAdd from "./component/Competition/Competition_Add/Competition_Add"
-import Shoes from "./component/Shoes/Shoes_Main/Shoes_Main";
+
+import Clothes from "./component/Shoes/Shoes_Main/Shoes_Main";
 import { Outlet } from 'react-router-dom';
 import ShoesSearch from "./component/Shoes/Shoes_Search/Shoes_Search"
 import Shoes_Detail from "./component/Shoes/Shoes_Detail/Shoes_Detail"
@@ -29,11 +27,6 @@ import CrewDetail from './component/Crew/Crew_Detail/Crew_Detail';
 import CrewSearch from "./component/Crew/Crew_Search/Crew_Search"
 import CrewAdd from "./component/Crew/Crew_Add/Crew_Add"
 
-import RunnerTalk from "./component/RunnerTalk/RunnerTalk_Main/RunnerTalk_Main"
-import RunnerTalkFilter from "./component/RunnerTalk/RunnerTalk_Filtering/RunnerTalk_Filtering"
-import RunnerTalkDetail from "./component/RunnerTalk/RunnerTalk_Detail/RunnerTalk_Detail"
-import RunnerTalkSearch from "./component/RunnerTalk/RunnerTalk_Search/RunnerTalk_Search"
-import RunnerTalkWrite from "./component/RunnerTalk/RunnerTalk_Write/RunnerTalk_Write"
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   RecoilRoot,
@@ -69,7 +62,8 @@ function App() {
             <Routes>
               <Route element={<WithNav/>}>
                 <Route path ="/" element={<Main/>}/>
-                <Route path='/schedule' element = {<Schedule/>}/>
+                <Route path="/clothes" element={<Clothes/>}/>
+                {/* <Route path='/schedule' element = {<Schedule/>}/>
                 <Route path='/schedule/search' element ={<ScheduleSearch/>}/>
 
                 <Route path='/shoes' element ={<Shoes/>}/>
@@ -81,11 +75,12 @@ function App() {
                 <Route path='/crew/search' element ={<CrewSearch/>}/>
 
                 <Route path="/runnertalk" element={<RunnerTalk/>}/>
-                <Route path="/runnertalk/search" element={<RunnerTalkSearch/>}/>
+                <Route path="/runnertalk/search" element={<RunnerTalkSearch/>}/> */}
               </Route>
 
               <Route element={<WithoutNav/>}>
-                <Route path="/login/main" element={<LoginMain/>} />
+              <Route path="/clothes/detail/:id" element={<Shoes_Detail/>}/> 
+                {/* <Route path="/login/main" element={<LoginMain/>} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register/tel" element={<RegisterTel/>}/>
                 <Route path="/register/nickname" element={<RegisterNickname/>} />
@@ -94,14 +89,13 @@ function App() {
                 <Route path='/competition/detail/:id' element ={<Competition_Detail/>}/>  
                 <Route path='/competition/add' element ={<CompetitionAdd/>}/>
 
-                <Route path="/shoes/detail/:id" element={<Shoes_Detail/>}/> 
                 <Route path="/shoes/add" element={<ShoesAdd/>}/>
 
                 <Route path="/runnertalk/category/:id" element={<RunnerTalkFilter/>}/>
                 <Route path="/runnertalk/detail/:id" element={<RunnerTalkDetail/>}/>
                 <Route path="/runnertalk/write" element={<RunnerTalkWrite/>}/>
 
-                <Route path="/crew/add" element={<CrewAdd/>}/>
+                <Route path="/crew/add" element={<CrewAdd/>}/> */}
               </Route>
 
             </Routes>

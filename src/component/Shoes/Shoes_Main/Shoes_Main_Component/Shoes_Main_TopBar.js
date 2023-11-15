@@ -34,12 +34,12 @@ export default function Shoes_TopBar(){
             </Box>
             <Box sx={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                 <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'700',fontSize:'23px'}}>
-                    러닝화
+                    
                 </Typography>
             </Box>
 
             <Box
-                onClick={navigateToShoesSearch}
+                
                 >
                 <IconButton type="button" sx={{ }} aria-label="search">
                     <SearchIcon />

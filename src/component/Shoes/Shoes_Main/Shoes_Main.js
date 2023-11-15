@@ -5,11 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import Auth from "../../../hoc/auth"
 import TopBar from "./Shoes_Main_Component/Shoes_Main_TopBar";
 import ShoesBrand from "./Shoes_Main_Component/Shoes_Main_Brand";
-import ShoesFeature from "./Shoes_Main_Component/Shoes_Main_Feature"
-import ShoesUseage from "./Shoes_Main_Component/Shoes_Main_Useage"
 import Filter from "./Shoes_Main_Component/Shoes_Main_Filter"
+import Feature from "./Shoes_Main_Component/Shoes_Main_Feature"
+import All from './Shoes_Main_Component/Shoes_Main_All'
 import Dial from "./Shoes_Main_Component/Shoes_Main_Dial"
-import ShoesAll from "./Shoes_Main_Component/Shoes_Main_All"
 import {useRecoilState} from 'recoil'   
 import {
     ShoesMain_UseageLoading,
@@ -59,13 +58,14 @@ function Shoes_Main(){
     useEffect(() =>{  
         window.scrollTo({top:0})
         setLoading1(true);
-        setLoading2(true);
-        setLoading3(true);
+        setLoading2(false);
+        setLoading3(false);
         setLoadingall(true);
     },[])
 
     useEffect(()=>{
         LoadingCompilation();
+        
     },[loading1,loading2,loading3])
 
     return(
@@ -76,11 +76,9 @@ function Shoes_Main(){
 
                 <ShoesBrand setOpen = {handleOpen} setClose = {handleClose} setError = {setError}/>
                 <Divider sx={{my:'20px'}}/>
-                <ShoesFeature setOpen = {handleOpen} setClose = {handleClose} setError = {setError}/>
+                <Feature setOpen = {handleOpen} setClose = {handleClose} setError = {setError}/>
                 <Divider sx={{my:'20px'}}/>
-                <ShoesUseage setOpen = {handleOpen} setClose = {handleClose} setError = {setError}/>
-                <Divider sx={{my:'20px'}}/>
-                <ShoesAll setOpen = {handleOpen}/>
+                <All setOpen = {handleOpen}/>
             </Box>
 
             <Dial/>
@@ -98,6 +96,8 @@ function Shoes_Main(){
                     </Box>
                 </Modal>
             </Box>
+
+            
         </Box>    
     )
 }
