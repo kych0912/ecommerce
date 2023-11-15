@@ -21,7 +21,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.48.2",
     "react-intersection-observer": "^9.5.2",
-    "react-router-dom": "^6.14.2",
+    "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
     "recoil": "^0.7.7",
@@ -35,7 +35,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "hompage":"tradetrend.store",
+  "homepage": "https://www.tradetrend.store/",
   "eslintConfig": {
     "extends": [
       "react-app",
