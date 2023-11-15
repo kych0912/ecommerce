@@ -1,0 +1,1 @@
+export const KAKAOMAP_ACCESS_KEY = "eb937cf6cebdcbea9b36e017f54e81d2";

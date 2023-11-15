@@ -1,0 +1,32 @@
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block; 
+    object-fit: cover;
+  } 
+
+  .swiper-scrollbar-drag{
+    --swiper-scrollbar-drag-bg-color:#4F1D76
+  }
+
+  .swiper-scrollbar-horizontal{
+    display: block !important;
+    width: 96px;
+    margin-left: auto;
+    margin-right: auto;
+    left:50% !important;
+    transform:translateX(-50%);
+    background-color: #f2f2f7;
+    --swiper-scrollbar-sides-offset:100px
+  }
