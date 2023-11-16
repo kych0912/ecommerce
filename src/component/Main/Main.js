@@ -72,13 +72,13 @@ function Main(){
                 <Banner/>
             </Box>
             <Box sx={{width:'100%',mb:8,display:'flex',flexDirection:'column',alignItems:"center",jusstifyContent:"center"}}>
-                {/* <Divider sx={{width:'90%',border:2,borderColor:"#F6F6F6"}}/>
+                <Divider sx={{width:'90%',border:2,borderColor:"#F6F6F6"}}/>
                 <Clothes setLoading2={setLoading2} loadingall={loadingall} setError={setError} setOpen={setOpen}/>
 
                 <Divider sx={{width:'90%',border:2,borderColor:"#F6F6F6"}}/>
                 <All setLoading3={setLoading3} loadingall={loadingall} setError={setError} setOpen={setOpen}/>
 
-                 */}
+                
             </Box>
 
             <Box>
