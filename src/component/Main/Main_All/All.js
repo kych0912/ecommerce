@@ -61,19 +61,19 @@ export default function Crew_Main_List(props){
     // const [list,setList] = useState([]);
     const session = localStorage.getItem('sessionid');
 
-    const FetchList = async () => {
-        const _PopularCLothes = await fetchClothesAll();
+    // const FetchList = async () => {
+    //     const _PopularCLothes = await fetchClothesAll();
     
-        if(_PopularCLothes.response){
-            props.setError(_PopularCLothes.response.status)
-            props.setOpen(true)
-        }
-        else{
-            setList(_PopularCLothes);
-        }
+    //     if(_PopularCLothes.response){
+    //         props.setError(_PopularCLothes.response.status)
+    //         props.setOpen(true)
+    //     }
+    //     else{
+    //         setList(_PopularCLothes);
+    //     }
         
-        props.setLoading3(false);
-    }
+    //     props.setLoading3(false);
+    // }
 
 
     function formatNumberWithCommas(number) {
