@@ -23,19 +23,19 @@ export default function Clothes(props){
 
     const [clothes,setClothes] = useState([]);
 
-    const FetchList = async () => {
-        const _PopularCLothes = await fetchPopularClothes();
+    // const FetchList = async () => {
+    //     const _PopularCLothes = await fetchPopularClothes();
     
-        if(_PopularCLothes.error){
-            props.setError(_PopularCLothes.error)
-            props.setOpen(true)
-        }
-        else{
-            setClothes(_PopularCLothes);
-        }
+    //     if(_PopularCLothes.error){
+    //         props.setError(_PopularCLothes.error)
+    //         props.setOpen(true)
+    //     }
+    //     else{
+    //         setClothes(_PopularCLothes);
+    //     }
         
-        props.setLoading2(false);
-    }
+    //     props.setLoading2(false);
+    // }
 
     function formatNumberWithCommas(number) {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -46,10 +46,14 @@ export default function Clothes(props){
     const navigateToShoesDetail =(index) =>{
         navigate(`/clothes/detail/${index}`)
     }
+
+    const navigateToClothes = () =>{
+        navigate(`/clothes`)
+    }
     
-    useEffect(() =>{
-        FetchList();
-    },[])
+    // useEffect(() =>{
+    //     FetchList();
+    // },[])
 
     return(
         <Box sx={{display:'flex',justifyContent:'start',alignItems:'center',backgroundColor:'#ffffff',flexDirection:'column',width:'100%',my:'22px'}}>
@@ -60,15 +64,15 @@ export default function Clothes(props){
                     <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'800',fontSize:'24px'}}>
                         지금 인기있는 의류
                     </Typography>
-                    <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'600',fontSize:'14px',color:'#8E8D8D'}}>
-                        <Link to ="/clothes" style={{ textDecoration: 'none', color:'#9D9D9D' }}>
+                    <Typography onClick={navigateToClothes} sx={{fontFamily:'Pretendard Variable',fontWeight:'600',fontSize:'14px',color:'#8E8D8D'}}>
+                        <Link style={{ textDecoration: 'none', color:'#9D9D9D' }}>
                             더보기 {'>'}
                         </Link>
                     </Typography>
                 </Box>
             </Box>
 
-            {/*대회정보*/}
+            {/* 대회정보
             {
                 props.loadingall?
                 <Box sx={{width:'95%',pt:2,height:'250px'}}>
@@ -132,7 +136,7 @@ export default function Clothes(props){
                         </Box>
                     }
                 </Box>
-            }
+            } */}
         </Box>    
     )
 }
