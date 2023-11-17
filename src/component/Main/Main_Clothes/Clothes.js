@@ -72,7 +72,6 @@ export default function Clothes(props){
                 </Box>
             </Box>
 
-            대회정보
             {
                 props.loadingall?
                 <Box sx={{width:'95%',pt:2,height:'250px'}}>
