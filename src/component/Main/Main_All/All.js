@@ -9,9 +9,56 @@ import {useNavigate} from 'react-router-dom';
 export default function Crew_Main_List(props){
     const loadingcomponent =[1,2,3,4,5,6];
 
+    const list = [
+        {
+            "id": 1,
+            "brand": "NIKE",
+            "maker": "ABCmart",
+            "name": "jordan",
+            "price": 43000,
+            "category": "shoes",
+            "mainImg": "/test/main1.jpeg",
+            "detail": "/test/detail1.jpeg",
+            "link": null
+        },
+        {
+            "id": 2,
+            "brand": "NIKE",
+            "maker": "musinsa",
+            "name": "terrex",
+            "price": 21000,
+            "category": null,
+            "mainImg": "/test/main2.jpeg",
+            "detail": "/test/detail2.jpeg",
+            "link": null
+        },
+        {
+            "id": 3,
+            "brand": "ADIDAS",
+            "maker": "naver",
+            "name": "superstar",
+            "price": 34000,
+            "category": null,
+            "mainImg": "/test/main3.jpeg",
+            "detail": "/test/detail3.jpeg",
+            "link": null
+        },
+        {
+            "id": 4,
+            "brand": "NIKE",
+            "maker": "abc",
+            "name": "jordan",
+            "price": 200000,
+            "category": "shoes",
+            "mainImg": "NIKE",
+            "detail": "/detail/link",
+            "link": null
+        }
+    ]
+
     const navigate = useNavigate();
 
-    const [list,setList] = useState([]);
+    // const [list,setList] = useState([]);
     const session = localStorage.getItem('sessionid');
 
     const FetchList = async () => {
@@ -37,9 +84,9 @@ export default function Crew_Main_List(props){
         navigate(`/clothes/detail/${id}`)
     }
 
-    useEffect(()=>{
-        FetchList();
-    },[])
+    // useEffect(()=>{
+    //     FetchList();
+    // },[])
 
     return(
         <Box sx={{display:'flex',justifyContent:'start',alignItems:'center',backgroundColor:'#ffffff',height:'60%',borderColor:'#E8E8E8',flexDirection:'column',width:'100%',mb:8,mt:'22px'}}>
