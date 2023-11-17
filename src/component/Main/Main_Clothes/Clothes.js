@@ -23,19 +23,19 @@ export default function Clothes(props){
 
     const [clothes,setClothes] = useState([]);
 
-    // const FetchList = async () => {
-    //     const _PopularCLothes = await fetchPopularClothes();
+    const FetchList = async () => {
+        const _PopularCLothes = await fetchPopularClothes();
     
-    //     if(_PopularCLothes.error){
-    //         props.setError(_PopularCLothes.error)
-    //         props.setOpen(true)
-    //     }
-    //     else{
-    //         setClothes(_PopularCLothes);
-    //     }
+        if(_PopularCLothes.error){
+            props.setError(_PopularCLothes.error)
+            props.setOpen(true)
+        }
+        else{
+            setClothes(_PopularCLothes);
+        }
         
-    //     props.setLoading2(false);
-    // }
+        props.setLoading2(false);
+    }
 
     function formatNumberWithCommas(number) {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -51,9 +51,9 @@ export default function Clothes(props){
         navigate(`/clothes`)
     }
     
-    // useEffect(() =>{
-    //     FetchList();
-    // },[])
+    useEffect(() =>{
+        FetchList();
+    },[])
 
     return(
         <Box sx={{display:'flex',justifyContent:'start',alignItems:'center',backgroundColor:'#ffffff',flexDirection:'column',width:'100%',my:'22px'}}>
@@ -72,7 +72,7 @@ export default function Clothes(props){
                 </Box>
             </Box>
 
-            {/* 대회정보
+            대회정보
             {
                 props.loadingall?
                 <Box sx={{width:'95%',pt:2,height:'250px'}}>
@@ -136,7 +136,7 @@ export default function Clothes(props){
                         </Box>
                     }
                 </Box>
-            } */}
+            }
         </Box>    
     )
 }
