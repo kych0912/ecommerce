@@ -39,8 +39,8 @@ export default function Shoes_Search_Filter(props){
     const FetchList = async () => {
         const response = await fetchSearchShoes(query);
     
-        if(response.response){
-            props.setError(response.response.status)
+        if(response.error){
+            props.setError(response.error)
             props.setOpen(true)
         }
         else{

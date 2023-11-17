@@ -69,8 +69,8 @@ export default function Shoes_Brand(props){
     const FetchShoesList = async (value) =>{
         const _BrandShoes = await fetchBrandShoes(value);
 
-        if(_BrandShoes.response){
-            props.setError(_BrandShoes.response.status);
+        if(_BrandShoes.error){
+            props.setError(_BrandShoes.error);
             props.setOpen(true);
         }
         else{

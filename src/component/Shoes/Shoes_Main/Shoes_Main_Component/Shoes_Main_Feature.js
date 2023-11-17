@@ -101,8 +101,8 @@ export default function Shoes_Brand(props){
     async function FirstFetchList(){
         const _BrandShoes = await fetchCategoryShoes(brandtags[0].query);
 
-        if(_BrandShoes.response){
-            props.setError(_BrandShoes.response.status);
+        if(_BrandShoes.error){
+            props.setError(_BrandShoes.error);
             props.setOpen(true);
         }
         else{

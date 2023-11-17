@@ -43,8 +43,8 @@ function Shoes_Detail(){
     const FetchShoes = async () => {
         const _ShoesDetail = await fetchShoesDetail(id);
         
-        if(_ShoesDetail.response){
-            setError(_ShoesDetail.response)
+        if(_ShoesDetail.error){
+            setError(_ShoesDetail.error)
             setOpen(true);
         }
         else{

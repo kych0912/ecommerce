@@ -43,8 +43,8 @@ export default function Shoes_Main_All(props){
 
         const _ShoesList = await fetchClothesAll();
 
-        if(_ShoesList.response){
-            setError(_ShoesList.response.status)
+        if(_ShoesList.error){
+            setError(_ShoesList.error)
             props.setOpen(true);
         }
         else{

@@ -26,8 +26,8 @@ export default function Clothes(props){
     const FetchList = async () => {
         const _PopularCLothes = await fetchPopularClothes();
     
-        if(_PopularCLothes.response){
-            props.setError(_PopularCLothes.response.status)
+        if(_PopularCLothes.error){
+            props.setError(_PopularCLothes.error)
             props.setOpen(true)
         }
         else{
