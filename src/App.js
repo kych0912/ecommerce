@@ -76,6 +76,7 @@ function App() {
 
                 <Route path="/runnertalk" element={<RunnerTalk/>}/>
                 <Route path="/runnertalk/search" element={<RunnerTalkSearch/>}/> */}
+                
               </Route>
 
               <Route element={<WithoutNav/>}>
