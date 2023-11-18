@@ -69,7 +69,7 @@ function App() {
 
 //배경
 const WebMain = styled.div`
-  background-color:#141414;
+  background-color:#ffffff;
   display:flex;
   justify-content:center;
   align-items:center;

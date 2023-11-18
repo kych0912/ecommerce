@@ -40,7 +40,7 @@ export default function Main(){
                 }}
                 pagination={true}
                 modules={[EffectCoverflow, Pagination,Autoplay]}
-                autoplay={{delay: 5000, disableOnInteraction: false}}
+                autoplay={{delay: 2500, disableOnInteraction: false}}
                 className="swiper-banner"
             >
                 <SwiperSlide className="swiper-slide-banner">
