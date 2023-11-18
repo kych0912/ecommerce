@@ -178,8 +178,8 @@ export default function Shoes_Brand(props){
                                 brandtags.map((item,index)=>{
                                     return(
                                         <SwiperSlide key ={index} className='swiper-width-auto'>
-                                            <Box onClick = {() =>handleToggleBrand(index)} backgroundColor = {brand === index?'#4F1D7642':"#E8E8E8"} sx={{height:'22px',display:'flex',justifyContent:'center',alignItems:'center',borderRadius:'3px'}}>
-                                                <Typography color = {brand === index?"#4F1D76":"#000000"} sx={{fontFamily:'Pretendard Variable',fontWeight:'500',fontSize:'16px',mx:1,lineHeight:"19.09px"}}>
+                                            <Box onClick = {() =>handleToggleBrand(index)} backgroundColor = {brand === index?'rgba(161, 187, 255, 0.26)':"#E8E8E8"} sx={{height:'22px',display:'flex',justifyContent:'center',alignItems:'center',borderRadius:'3px'}}>
+                                                <Typography color = {brand === index?"#A1BBFF":"#000000"} sx={{fontFamily:'Pretendard Variable',fontWeight:'500',fontSize:'16px',mx:1,lineHeight:"19.09px"}}>
                                                     {item.name}
                                                 </Typography>
                                             </Box>

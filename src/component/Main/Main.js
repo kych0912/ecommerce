@@ -67,7 +67,7 @@ function Main(){
 
     return(
         <Box sx={{width:'100%',display:'flex',justifyContent:'start',alignItems:'center',backgroundColor:'#ffffff',flexDirection:'column'}}>
-            <Box sx={{display:'flex',flexDirection:'column',width:"100%",background: 'linear-gradient(to bottom, #4F1D76, rgba(255, 255, 255, 0.26))'}}>
+            <Box sx={{display:'flex',flexDirection:'column',width:"100%",background: 'linear-gradient(to bottom, #A1BBFF, rgba(255, 255, 255, 0.26))'}}>
                 <TopBar/>
                 <Banner/>
             </Box>

@@ -48,7 +48,7 @@ export default function Main_TopBar(){
 
 
             <Box sx={{mr:2}}>
-                <Avatar alt="Profile" src={`${API_URL}${profile}`} />
+                <Avatar alt="User" src={`${API_URL}${profile}`} />
             </Box>
         </Box>    
     )

@@ -28,6 +28,7 @@
     background-size: cover;
     width: 350px !important;
     border-radius: 18px;
+    position:"relative";
   }
   
   .swiper-slide-image {

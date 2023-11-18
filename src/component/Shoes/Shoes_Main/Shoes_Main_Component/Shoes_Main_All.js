@@ -77,10 +77,10 @@ export default function Shoes_Main_All(props){
             <Box sx={{width:'100%'}}>
                 <Box sx={{width:'100%',display:'flex',alignItems:'start',flexDirection:'column',justifyContent:"center"}}>
                     <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'800',fontSize:'24px'}}>
-                        모든 러닝화
+                        발매 상품
                     </Typography>
                     <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'500',fontSize:'14px',color:"#9D9D9D"}}>
-                         러닝라이프에 등록된 모든 러닝화에요
+                         TradeTrend에 발매된 모든 상품이에요
                     </Typography>
                 </Box>
             </Box>

@@ -23,7 +23,7 @@ export default function Competition_Detail_Banner(props){
     },[])
 
     return(
-        <Box sx={{position:'relative',zIndex:0,display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#4F1D76',flexDirection:'column',width:'100%',height:'350px'}}>
+        <Box sx={{position:'relative',zIndex:0,display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#A1BBFF',flexDirection:'column',width:'100%',height:'350px'}}>
             {
                 props.shoes.mainImg?
                 <Box sx={{backgroundImage:`url(${API_URL}/api/file/${props.shoes.mainImg})`,width:'100%',height:'100%',backgroundPosition: 'center',backgroundRepeat: 'no-repeat',backgroundSize: 'cover'}}/>

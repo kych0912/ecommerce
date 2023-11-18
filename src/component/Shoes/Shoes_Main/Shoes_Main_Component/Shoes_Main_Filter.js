@@ -114,7 +114,7 @@ export default function Shoes_Search_Filter(props){
                                                     <SwiperSlide key={item.id} className='shoes'>
                                                        <Box onClick={()=>navigateToShoesDetail(item.id)} sx={{width:'100%',height:'250px'}}>
                                                             <Box sx={{position:'relative',backgroundColor:'#f4f4f4',borderRadius:'8px'}}>
-                                                                <img src={`${API_URL}/api/file/${item.mainImg}`} onerror="this.style.display='none'" style={{width:'170px',height:'170px',objectFit:'contain',objectPosition:'center',px:1}}/>
+                                                                <img src={`${API_URL}/api/file/${item.mainImg}`} onerror="this.style.display='none'" style={{width:'170px',height:'170px',objectFit:'cover',objectPosition:'center',px:1}}/>
                                                             </Box>
                                                             <Box sx={shoesList.shoesDetailBox}>
                                                                 <Typography sx={shoesList.shoesDetailBrand}>
@@ -145,7 +145,7 @@ export default function Shoes_Search_Filter(props){
                 :
                 <Box onClick={openDrawer} sx={{width:"100%",height:"100px",borderRadius:'8px',backgroundColor:'#F6F6F6',display:"flex",justifyContent:'center',alignItems:"center"}}>
                     <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'500',fontSize:'24px'}}>
-                        나를 위한 러닝화 찾기
+                        나를 위한 의류 찾기
                     </Typography>
                 </Box>
             }

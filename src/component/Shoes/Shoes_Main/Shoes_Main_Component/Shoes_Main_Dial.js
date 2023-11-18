@@ -14,7 +14,7 @@ export default function BasicSpeedDial() {
     const navigate = useNavigate();
 
     const navigateToShoesAdd = () =>{
-        navigate('/shoes/add')
+        navigate('/shoes')
     }
 
     const handleOpen = () => {
@@ -37,25 +37,19 @@ export default function BasicSpeedDial() {
                 onClick={handleOpen}
             >
                 <SpeedDialIcon 
-                    sx={{transform: open ? 'rotate(45deg)' : 'rotate(0deg)',transition: 'transform 0.15s ease-in-out'}}
+                    sx={{transform: open ? 'rotate(45deg)' : 'rotate(0deg)',transition: 'transform 0.15s ease-in-out',color:"white"}}
                 />
             </Fab>
         
             <Box sx={{ position:"absolute",right:130}}>
                 <Fade in={open}>
-                        <Box sx={{display:'flex',flexDirection:'column',alignItems:'start',justifyContent:"center",position:"fixed",bottom:150,width:'180px',height:'85px',backgroundColor:'#DEDAE0',borderRadius:'15px',border:1,borderColor:'#4F1D76',zIndex:1002}}>
-                            <Box onClick={navigateToShoesAdd} sx={{display:'flex',ml:2}}>
-                                <AddIcon color="primary" sx={{size:'15px'}}/>
-                                <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'500',fontSize:'15px',color:"#4F1D76",ml:1,lineHeight:'25px'}}>
-                                    러닝화 등록 요청
+                        <Box sx={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:"center",position:"fixed",bottom:150,width:'180px',height:'60px',backgroundColor:'#DEDAE0',borderRadius:'15px',border:1,borderColor:'#A1BBFF',zIndex:1002}}>
+                            <Box onClick={navigateToShoesAdd} sx={{display:'flex'}}>
+                                <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'500',fontSize:'15px',color:"#000000",lineHeight:'25px',color:"#6983C9"}}>
+                                    GPT에게 옷 추천받기
                                 </Typography>
                             </Box>
-                            <Box sx={{display:'flex',ml:2,mt:0.2}}>
-                                <BookmarkBorderIcon color="primary" sx={{size:'15px'}}/>
-                                <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'500',fontSize:'15px',color:"#4F1D76",ml:1,lineHeight:'23px'}}>
-                                    저장한 러닝화
-                                </Typography>
-                            </Box>
+                            
                         </Box>
                 </Fade>
             </Box>

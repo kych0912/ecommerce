@@ -4,12 +4,10 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import PeopleIcon from '@mui/icons-material/People';
-import CorporateFareIcon from '@mui/icons-material/CorporateFare';
-import DoNotStepIcon from '@mui/icons-material/DoNotStep';
 import { useNavigate } from 'react-router-dom';
 import { Box } from '@mui/system';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import SortIcon from '@mui/icons-material/Sort';
 
 export default function Navbar() {
 
@@ -22,8 +20,8 @@ export default function Navbar() {
   const navigateToMain = () =>{
     navigate('/');
   }
-  const navigateToContest = () =>{
-    navigate('/schedule');
+  const navigateToClothes = () =>{
+    navigate('/clothes');
   }
   const navigateToTalk= () =>{
     navigate('/runnertalk');
@@ -50,28 +48,15 @@ export default function Navbar() {
           icon={<HomeIcon />}
         />
         <BottomNavigationAction
-          label="대회일정"
+          label="옷 찾기"
           value="/schedule"
-          onClick = {navigateToContest}
-          icon={<DirectionsRunIcon />}
+          onClick = {navigateToClothes}
+          icon={<SortIcon />}
         />
         <BottomNavigationAction
-          label="러너톡"
-          value="/runnertalk"
-          onClick = {navigateToTalk}
-          icon={<CorporateFareIcon />}
-        />
-        <BottomNavigationAction
-          label="러닝크루"
-          value="/crew"
-          onClick = {navigateToCrew}
-          icon={<PeopleIcon />}
-        />
-        <BottomNavigationAction
-          label="러닝화"
-          value="/shoes"
-          onClick = {navigateToShoes}
-          icon={<DoNotStepIcon />}
+          label="유저"
+          value="/user"
+          icon={<PersonOutlineIcon />}
         />
       </BottomNavigation>
     </Box>

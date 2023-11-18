@@ -68,7 +68,7 @@ export default function TemporaryDrawer(props) {
 
     const handleToggleFeature = (value) => {
         !feature.includes(value)
-        ? setFeature(((feature) => [ value]))
+        ? setFeature(((feature) => [value]))
         : setFeature((feature.filter((button) => button !== value)));
     };
 
@@ -77,8 +77,8 @@ export default function TemporaryDrawer(props) {
     */}
 
     const navigateToShoesSearch = () =>{
-        let querybrand = brandList[brand];
-        let querycategory = CategoryList[feature].query;
+        let querybrand = brand.map((index)=>brandList[index]);
+        let querycategory = feature.map((index)=>CategoryList[index].query);
 
         const queryArray = [querybrand,querycategory];
         const queryKey = ['brand','category'];
@@ -86,7 +86,7 @@ export default function TemporaryDrawer(props) {
         let payload ={}
 
         for(let i = 0 ; i<2;i++){
-            if(queryArray[i]){
+            if(queryArray[i].length){
                 payload[queryKey[i]] = queryArray[i];
             }
         }
@@ -94,10 +94,8 @@ export default function TemporaryDrawer(props) {
         var payloadString = Object.entries(payload).map(e => e.join('=')).join('&');
         props.setOpen(false)
 
-        props.setQuery(payloadString)
+        props.setQuery(prev=>prev=payloadString)
     }
-
-    
 
 
     const list = (anchor) => (
@@ -124,7 +122,7 @@ export default function TemporaryDrawer(props) {
                         <Box sx={{mt:1}}>
                             <Box sx={{display:'flex',width:"100%"}}>
                                 {["NIKE","ADIDAS","ARCTERYX","LEE","MIZUNO"].map((text,index)=>(
-                                    <Box key = {index} onClick ={()=>handleToggleBrand(index)} backgroundColor={brand.includes(index)?'#4F1D76':''}  sx={{width:"auto",height:'23px',border:1,borderRadius:5,display:'flex',justifyContent:'center',alignItems:'center',mr:1,borderColor:'#D9D9D9'}}>
+                                    <Box key = {index} onClick ={()=>handleToggleBrand(index)} backgroundColor={brand.includes(index)?'#A1BBFF':''}  sx={{width:"auto",height:'23px',border:1,borderRadius:5,display:'flex',justifyContent:'center',alignItems:'center',mr:1,borderColor:'#D9D9D9'}}>
                                         <Typography color = {brand.includes(index)?'white':'black'} sx={{fontFamily:'Pretendard Variable',fontWeight:'300',fontSize:'13px',mx:1}}>
                                             {text}
                                         </Typography>
@@ -144,7 +142,7 @@ export default function TemporaryDrawer(props) {
                         <Box sx={{mt:1}}>
                             <Box sx={{display:'flex',width:"100%"}}>
                                 {["신발","자켓","셔츠","하의"].map((text,index)=>(
-                                    <Box key = {index} onClick ={()=>handleToggleFeature(index)} backgroundColor={feature.includes(index)?'#4F1D76':''}  sx={{width:"auto",height:'23px',border:1,borderRadius:5,display:'flex',justifyContent:'center',alignItems:'center',mr:1,borderColor:'#D9D9D9'}}>
+                                    <Box key = {index} onClick ={()=>handleToggleFeature(index)} backgroundColor={feature.includes(index)?'#A1BBFF':''}  sx={{width:"auto",height:'23px',border:1,borderRadius:5,display:'flex',justifyContent:'center',alignItems:'center',mr:1,borderColor:'#D9D9D9'}}>
                                         <Typography color = {feature.includes(index)?'white':'black'} sx={{fontFamily:'Pretendard Variable',fontWeight:'300',fontSize:'13px',mx:1}}>
                                             {text}
                                         </Typography>
@@ -161,8 +159,8 @@ export default function TemporaryDrawer(props) {
                         <Button onClick ={()=>{
                             navigateToShoesSearch();
                             }} variant="contained" color='primary' sx={{width:'100%',height:'45px',borderRadius:'7px'}}>
-                            <Typography sx={{fontFamily:'Pretendard Variable',fontSize:'15px',fontWeight:700}}>
-                                러닝화 찾기
+                            <Typography color="white" sx={{fontFamily:'Pretendard Variable',fontSize:'15px',fontWeight:700}}>
+                                상품 찾기
                             </Typography>
                         </Button>
                     </Box>

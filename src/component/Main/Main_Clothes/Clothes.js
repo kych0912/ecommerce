@@ -109,7 +109,7 @@ export default function Clothes(props){
                                             <SwiperSlide key={index} className='shoes'>
                                                 <Box onClick={()=>navigateToShoesDetail(item.id)} sx={{width:'100%',height:'250px'}}>
                                                     <Box sx={{position:'relative',backgroundColor:'#f4f4f4',borderRadius:'8px'}}>
-                                                        <img src={`${API_URL}/api/file/${item.mainImg}`} onerror="this.style.display='none'" style={{width:'170px',height:'170px',objectFit:'cover',objectPosition:'center',px:1}}/>
+                                                        <img src={`${API_URL}/api/file/${item.mainImg}`} onerror="this.style.display='none'" style={{width:'170px',height:'170px',objectFit:'cover',objectPosition:'center',px:1,borderRadius:'8px'}}/>
                                                     </Box>
                                                     <Box sx={shoesList.shoesDetailBox}>
                                                         <Typography sx={shoesList.shoesDetailBrand}>

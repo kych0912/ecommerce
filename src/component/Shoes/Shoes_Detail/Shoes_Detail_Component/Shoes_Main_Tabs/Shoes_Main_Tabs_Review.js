@@ -18,7 +18,7 @@ export default function Competition(){
             date:"2021-10-10",
             like:10,
             comment:10,
-            img:"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+            img:"https://image.msscdn.net/data/estimate/3584063_0/gallery_6554ab3c3c9ac.jpg.list",
             name:"김민수",
             profile:"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
         },
@@ -29,7 +29,7 @@ export default function Competition(){
             date:"2021-10-10",
             like:10,
             comment:10,
-            img:"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+            img:"https://image.msscdn.net/data/estimate/3465171_0/gallery_64f83050cba78.jpg.list",
             name:"김민수",
             profile:"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
         },
@@ -40,7 +40,7 @@ export default function Competition(){
             date:"2021-10-10",
             like:10,
             comment:10,
-            img:"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+            img:"https://image.msscdn.net/data/estimate/1666442_0/gallery_62314fdf3c439.jpg.list",
             name:"김민수",
             profile:"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
         },
