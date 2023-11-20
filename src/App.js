@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import {
   HashRouter,
@@ -11,10 +11,10 @@ import Main from "./component/Main/Main";
 import styled from "styled-components"
 import Navbar from "./component/Navbar/Navbar"
 
-import Clothes from "./component/Shoes/Shoes_Main/Shoes_Main";
+import Clothes from "./component/Clothes/Clothes_Main/Clothes_Main";
 import { Outlet } from 'react-router-dom';
 
-import Shoes_Detail from "./component/Shoes/Shoes_Detail/Shoes_Detail"
+import Clothes_Detail from "./component/Clothes/Clothes_Detail/Clothes_Detail"
 
 import {
   RecoilRoot,
@@ -55,7 +55,7 @@ function App() {
               </Route>
 
               <Route element={<WithoutNav/>}>
-              <Route path="/clothes/detail/:id" element={<Shoes_Detail/>}/> 
+              <Route path="/clothes/detail/:id" element={<Clothes_Detail/>}/> 
 
               </Route>
 
