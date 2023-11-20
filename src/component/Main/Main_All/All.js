@@ -2,7 +2,7 @@ import {Box,Typography,Grid,IconButton} from '@mui/material';
 import React, { useState,useEffect } from "react";
 import {CircularProgress} from '@mui/material';
 import {API_URL} from "../../../API/URL/index"
-import { fetchClothesAll } from '../../../API/api/RunningShoes/clothes_api';
+import { fetchClothesAll } from '../../../API/api/Clothes/clothes_api';
 import { shoesList } from '../../../style/plate/ShoesList';
 import {useNavigate} from 'react-router-dom';
 
@@ -51,7 +51,7 @@ export default function Crew_Main_List(props){
             <Box sx={{width:'90%'}}>
                 <Box sx={{width:'100%',display:'flex',flexDirection:"column",justifyContent:"center",alignItems:"start"}}>
                     <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'800',fontSize:'24px'}}>
-                        모든 의류
+                        모든 상품
                     </Typography>
                     <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'600',fontSize:'14px',color:'#8E8D8D'}}>
                         TradeTrend 에 등록된 모든 의류에요

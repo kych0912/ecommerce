@@ -34,7 +34,7 @@ export default function Main_TopBar(){
             position:'fixed',
             top:10,
             display:'flex',
-            justifyContent:'end',
+            justifyContent:'space-between',
             alignItems:'center',
             height:'60px',
             width:'100%',
@@ -45,7 +45,11 @@ export default function Main_TopBar(){
             backgroundColor:'transparent',
             borderBottom:0,
         }}>
-
+            <Box sx={{ml:2}}>
+                <Typography  sx={{fontFamily:'Pretendard Variable',fontWeight:'600',fontSize:'16px'}}>
+                    TRADETREND
+                </Typography>
+            </Box>
 
             <Box sx={{mr:2}}>
                 <Avatar alt="User" src={`${API_URL}${profile}`} />

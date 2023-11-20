@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import {API_URL} from "../../../API/URL/url"
 import Skeleton from '@mui/material/Skeleton';
-import { fetchPopularClothes} from '../../../API/api/RunningShoes/clothes_api';
+import { fetchPopularClothes} from '../../../API/api/Clothes/clothes_api';
 import { shoesList } from '../../../style/plate/ShoesList';
 
 import './style.css';
@@ -61,9 +61,14 @@ export default function Clothes(props){
             {/*상단제목*/}
             <Box sx={{width:'90%'}}>
                 <Box sx={{width:'100%',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-                    <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'800',fontSize:'24px'}}>
-                        지금 인기있는 의류
-                    </Typography>
+                    <Box>
+                        <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'800',fontSize:'24px'}}>
+                            Most Popular
+                        </Typography>
+                        <Typography sx={{fontFamily:'Pretendard Variable',fontWeight:'600',fontSize:'14px',color:'#8E8D8D'}}>
+                            인기 상품
+                        </Typography>
+                    </Box>
                     <Typography onClick={navigateToClothes} sx={{fontFamily:'Pretendard Variable',fontWeight:'600',fontSize:'14px',color:'#8E8D8D'}}>
                         <Link style={{ textDecoration: 'none', color:'#9D9D9D' }}>
                             더보기 {'>'}

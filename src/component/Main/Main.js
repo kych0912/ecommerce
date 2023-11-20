@@ -6,7 +6,6 @@ import "../../style/fonts/pretendardvariable.css"
 import { useNavigate } from "react-router-dom";
 import Banner from "./Banner/Banner"
 import Clothes from "./Main_Clothes/Clothes"
-import Auth from "../../hoc/auth"
 import {Modal,Divider} from '@mui/material';
 import TopBar from "./TopBar/TopBar"
 import All from "./Main_All/All"
@@ -98,4 +97,4 @@ function Main(){
     )
 }
 
-export default Auth(Main,null)
+export default Main
