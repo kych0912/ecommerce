@@ -14,7 +14,7 @@ export default function BasicSpeedDial() {
     const navigate = useNavigate();
 
     const navigateToGTP = () =>{
-        window.open("https://cb1f307f4aac380361.gradio.live/","_blank","noopener, noreferrer")
+        window.open("https://0f5145be7c4e650a4c.gradio.live","_blank","noopener, noreferrer")
     }
 
     const handleOpen = () => {
